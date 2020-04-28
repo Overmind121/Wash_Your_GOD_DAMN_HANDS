@@ -64,7 +64,9 @@ def create_model():
 
     model.save("Wash_Your_GOD_DAMN_HANDS.h5")
 
-model_test = tf.keras.models.load_model('/Users/lukek/PycharmProjects/WashYourHands/Wash_Your_GOD_DAMN_HANDS.h5')
+#create_model()
+
+model_test = tf.keras.models.load_model('/Users/lukek/Wash_Your_GOD_DAMN_HANDS/WashYourHands/Wash_Your_GOD_DAMN_HANDS.h5')
 for i in range(20):
     test_img = X_test[i].reshape(-1, 50, 50, 1)
     prediction = model_test.predict(test_img)

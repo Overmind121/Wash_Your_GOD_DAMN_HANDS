@@ -34,7 +34,6 @@ cap = cv2.VideoCapture(0)
 while(True):
     ret, frame = cap.read()
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    gray_display = cv2.resize(gray, (150,150))
     resized_img = cv2.resize(gray,(50,50))
     numpy_resized = np.array(resized_img).reshape(-1, 50, 50, 1)
     numpy_resized=numpy_resized/255
@@ -89,7 +88,7 @@ while(True):
         a.digitalWrite(9, a.LOW)
         break
     
-    cv2.putText(gray_display, pred_string, (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,0,0), 2)
+    #cv2.putText(gray_display, pred_string, (100, 100), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,0,0), 2)
 
-    cv2.imshow("frame", gray_display)
+    #cv2.imshow("frame", gray_display)
 cv2.destroyAllWindows()

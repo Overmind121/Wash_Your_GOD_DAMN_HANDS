@@ -6,7 +6,7 @@ class_names = ["Not_Washing", "Washing"]
 
 model_test = tf.keras.models.load_model('/Users/lukek/Wash_Your_GOD_DAMN_HANDS/WashYourHands/Wash_Your_GOD_DAMN_HANDS.h5')
 
-cap = cv2.VideoCapture(r'/Users/lukek/Desktop/WashYourGODAMNHANDS/RawFootage/MVI_4059.MP4')
+cap = cv2.VideoCapture(r'/Users/lukek/Desktop/WashYourGODAMNHANDS/Not_Washing_vid/Not_Washing_vid9.MP4')
 
 while(True):
     ret, frame = cap.read()

@@ -27,7 +27,7 @@ def create_model():
     model.add(MaxPooling2D(pool_size=(2,2)))
     model.add(Dropout(.5))
 
-    model.add(Conv2D(128, (5,5), padding = 'same'))
+    model.add(Conv2D(128, (3,3), padding = 'same'))
     model.add(BatchNormalization())
     model.add(Activation('relu'))
     model.add(MaxPooling2D(pool_size=(2,2)))
@@ -52,12 +52,22 @@ def create_model():
     model.add(Activation('relu'))
     model.add(Dropout(.5))
 
+    model.add(Dense(512))
+    model.add(BatchNormalization())
+    model.add(Activation('relu'))
+    model.add(Dropout(.5))
+
+    model.add(Dense(256))
+    model.add(BatchNormalization())
+    model.add(Activation('relu'))
+    model.add(Dropout(.5))
+
     model.add(Dense(2, activation='sigmoid'))
     model.compile(optimizer='adam',
                   loss =tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
                   metrics=['accuracy'])
 
-    model.fit(X_train, y_train, batch_size=32, epochs=10, validation_split=.3, verbose=1)
+    model.fit(X_train, y_train, batch_size=10, epochs=10, validation_split=.4, verbose=2)
 
     test_loss, test_acc = model.evaluate(X_test, y_test, verbose=2)
     print(test_acc)

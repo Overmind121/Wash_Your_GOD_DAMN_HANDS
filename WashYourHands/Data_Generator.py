@@ -6,11 +6,11 @@ file = 5
 
 print("hello")
 
-cap = cv2.VideoCapture(r"C:\Users\lukek\Desktop\WashYourGODAMNHANDS\Washing_vid\Washing_vid9.MP4")
-path = r"C:\Users\lukek\Desktop\WashYourGODAMNHANDS\Washing"
+cap = cv2.VideoCapture(r"C:\Users\lukek\Desktop\WashYourGODAMNHANDS\Not_Washing_vid\Not_Washing_vid14.mov")
+path = r"C:\Users\lukek\Desktop\WashYourGODAMNHANDS\Not_Washing"
 
 
-count = 11252
+count = 17661
 
 while cap.isOpened():
     ret, frame = cap.read()
